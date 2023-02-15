@@ -4,7 +4,7 @@ import useStore from '@/store';
 import { revalidateList, revalidateSingle } from '@/utils/revalidation';
 import { Note, EditedNote } from '@/types/types';
 
-export const useMutatedNote = () => {
+export const useMutateNote = () => {
     const reset = useStore((state) => state.resetEditedNote);
     const createNoteMutation = useMutation(
         async (note: Omit<Note, 'created_at' | 'id' | 'comments'>) => {

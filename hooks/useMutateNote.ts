@@ -8,6 +8,7 @@ export const useMutateNote = () => {
     const reset = useStore((state) => state.resetEditedNote);
     const createNoteMutation = useMutation(
         async (note: Omit<Note, 'created_at' | 'id' | 'comments'>) => {
+            console.log(note);
             const { data, error } = await supabase.from('notes').insert(note);
             if (error) throw new Error(error.message);
             return data;

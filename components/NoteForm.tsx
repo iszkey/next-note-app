@@ -11,13 +11,13 @@ export const NoteForm: FC = () => {
 
     const submitHandler = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (editedNote.id === '')
+        if (editedNote.id === '') {
             createNoteMutation.mutate({
                 title: editedNote.title,
                 content: editedNote.content,
                 user_id: supabase.auth.user()?.id,
             });
-        else {
+        } else {
             updateNoteMutation.mutate({
                 id: editedNote.id,
                 title: editedNote.title,

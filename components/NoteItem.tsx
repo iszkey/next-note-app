@@ -24,7 +24,7 @@ export const NoteItem: FC<
 
     return (
         <li className="my-3">
-            <Link href={`/note/${id}`} prefetch={false}>
+            <Link legacyBehavior href={`/note/${id}`} prefetch={false}>
                 <a className="cursor-pointer hover:text-pink-600">{title}</a>
             </Link>
             {userId === user_id && (
